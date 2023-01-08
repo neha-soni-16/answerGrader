@@ -1,16 +1,18 @@
+*,
+*::before,
+*::after { 
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  padding: 1rem;
+  /* background-color: #ececec; */
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  padding: 4rem 0;
 }
 
 .App-header {
@@ -28,11 +30,223 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.App h1 {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.1rem;
+  color: #4E4F50;
+}
+
+.App .underline {
+  width: 5rem;
+  height: 0.25rem;
+  background: #4E4F50;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 4rem;
+}
+
+
+/* Display CSS */
+
+
+
+.Display .mainContainer {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.Display .cardContainer {
+  display: flex;
+  padding: 1rem;
+
+  @media(min-width: 40rem) {
+    width: 50%;
   }
-  to {
-    transform: rotate(360deg);
+
+  @media(min-width: 56rem) {
+    width: 33.3333%;
   }
 }
+
+
+.Display .card {
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  justify-content: center;
+  text-align:center;
+  align-items: center;
+}
+
+
+.Display .cardContent {
+  display: flex;
+  width: 100%;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.Display .grade {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.Display .btn {
+  /* display: block;
+  width: 100%; */
+  background-color: white;
+  border: 1px solid #4E4F50;
+  border-radius: 1rem;
+  color: #4E4F50;
+  font-weight: 400;
+  padding: 1rem;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.Display .btn:hover {
+  transform: scale(1.2);
+  background-color: #4E4F50;
+  color: #fff;
+}
+
+
+.Display .selectGrade {
+  background-color: #4E4F50;
+  color: #fff;
+}
+
+
+.Display .cardId {
+  color: #4E4F50;
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 2rem;
+}
+
+/* .Display .cardText {
+  color: #4E4F50;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+} */
+
+.Display img {
+  height: auto;
+  max-width: 100%;
+  width: 60vh;
+  vertical-align: middle;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  filter: contrast(70%);
+  overflow: hidden;
+  position: relative;
+  transition: filter 0.5s cubic-bezier(.43,.41,.22,.91);;
+  
+  @media(min-width: 40rem) {
+    &::before {
+      padding-top: 66.6%;
+    }
+  }
+}
+
+.Display img::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%;
+}
+
+
+
+
+/* Pagination CSS */
+
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  align-content: center;
+  margin-bottom: 5rem;
+  font-size: 1.4rem;
+  gap: 5px;
+}
+
+.pagination .page-num {
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: 400;
+}
+
+.pagination .page-num:hover {
+  background-color: #4E4F50;
+  color: white;
+}
+
+.pagination .active {
+  background-color: #4E4F50;
+  color: white;
+}
+
+/* Types */
+
+.typemenu {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  max-width: 800px;
+  padding-bottom: 1.5rem;
+  margin: 2rem auto;
+  border-bottom: 0.1rem solid #4e4f5065;
+  
+  @media (max-width: 650px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+  
+  .typeitem {
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    font-size: 0.8rem;
+    border: 1px solid #4E4F50;
+    border-radius: 1rem;
+    color: #4E4F50;
+    font-weight: 400;
+    padding: 1rem;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+  }
+
+  .typeitem:hover {
+    transform: scale(1.2);
+    background-color: #4E4F50;
+    color: #fff;
+  }
+
+  .typemenu .selectType {
+    background-color: #4E4F50;
+    color: #fff;
+  }
